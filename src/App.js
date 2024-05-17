@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     if (loading) return;
     setProgrammers(data[page - 1]);
-  }, [loading, data, page]);
+  }, [loading, page]);
 
   return (
     <div className="container my-5">
