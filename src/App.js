@@ -1,9 +1,13 @@
+import UsePaginatedFetch from "./usePaginatedFetch";
+
+const url = 'https://react-mini-projects-api.classbon.com/Programmer/programmers';
 
 
 function App() {
+  const [loading , data] = UsePaginatedFetch(url,3)
   return (
 <div className="container">
-  salam 
+
 </div>
   );
 }
