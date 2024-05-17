@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import UsePaginatedFetch from "./usePaginatedFetch";
 import Card from './components/Card.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import PageInation from "./components/pageination.jsx";
 const url = 'https://react-mini-projects-api.classbon.com/Programmer/programmers';
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
       )}
 
       {!loading && (
+        <>
         <div className="row d-flex justify-content-center">
           {programmers.map(({ id, ...programmer }) => (
             <div className="col-md-6 col-lg-4 mb-4" key={id}>
@@ -33,8 +34,14 @@ function App() {
             </div>
           ))}
         </div>
+              <div className="row">
+              <PageInation pages={data.length} setPage={setPage} activePage={page}/>
+              </div>
+        </>
       )}
+
     </div>
+    
   );
 }
 
